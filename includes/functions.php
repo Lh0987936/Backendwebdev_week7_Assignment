@@ -1,4 +1,5 @@
 <?php 
+// LOGAN HOOVER
 function esc_html(string $text) {
     return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
@@ -27,5 +28,7 @@ function write_csv_rows(string $path, array $rows) {
     foreach($rows as $row) {
         fputcsv($filepath, $row);
     }
+    fclose($filepath);
+    return True;
 }
 ?>
